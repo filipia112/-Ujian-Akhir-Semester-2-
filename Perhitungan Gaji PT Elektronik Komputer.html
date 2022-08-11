@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Program Menghitung Gaji PT Abadi Komputer</title>
+        <link rel="stylesheet" href="perhitungangajielektronikkomputer.css">
+        <script language="javascript" type="text/javascript">
+            function hasilgaji(){
+            var upahperjam=document.getElementById("upahpjam").value;
+            var jamkerja=document.getElementById("jamkerja").value;
+            var gaji=upahperjam*jamkerja;
+            document.getElementById("gaji").value=gaji;
+            var tunjangnanak=0.10;
+            var totalgaji; 
+            var anak=document.getElementById("anak").value;
+    if(anak>0){
+        totalgaji=gaji+(gaji*tunjangnanak);
+        document.getElementById("totalgaji").value=totalgaji;
+        document.getElementById("tunjangan").value="10%";
+    }else{
+        document.getElementById("totalgaji").value=totalgaji;
+        document.getElementById("tunjangan").value="0%";
+    }
+}
+        </script>
+    </head>
+    <body>
+        <h1>Program Menghitung Gaji PT Abadi Komputer</h1>
+        <hr><form method="dialog" action=" " name="menghitung gaji pt elektronik">
+           <label>Nama Pegawai &nbsp; &nbsp;&nbsp; <input type=text name="nama" id="nama"></label>
+            <br><br>
+           <label>Jam Kerja &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type=text name="jamkerja" id="jamkerja"></label>
+            <br><br>
+           <label>Upah per Jam &nbsp; &nbsp; &nbsp; &nbsp;<input type=text name="upahpjam" id="upahpjam"></label>
+           <br><br>
+           <label>Anak &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; <input type=text name="anak" id="anak"></label>
+           <br><br>
+           <label>Gaji &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp; </label><input type=text name="gaji" id="gaji"></label>
+           <br><br>
+           <label>Tunjangan 10% &nbsp;  &nbsp; <input type=text name="tunjangan" id="tunjangan"></label>
+           <br><br>
+           <label>Total Gaji &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <input type=text name="totalgaji" id="totalgaji"></label>
+           <br><br>
+           <input type="reset" value="Remove">
+           <button onclick="hasilgaji()">Enter</button>
+        </form>
+      
+    </body>
+</html>

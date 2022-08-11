@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Program Penjualan Barang PT Abadi</title>
+        <link rel="stylesheet" href="Penjualanbarang.css">
+        <script language="javascript" type="text/javascript">
+            function jumlah(){
+            var price=document.getElementById("price").value;
+            var totalitem=document.getElementById("totalitem").value;
+            var totalprice=price*totalitem;
+            document.getElementById("totalprice").value=totalprice;
+            var dis=0.10;
+            var pay;
+            if(totalprice>2750000){
+            pay=totalprice-(totalprice*dis);
+            document.getElementById("pay").value=pay;
+            document.getElementById("discount").value="10%";
+            }
+            else{
+            document.getElementById("pay").value="-";
+            document.getElementById("discount").value="0%";
+         }
+      }
+        </script>
+    </head>
+    <body>
+        <h1>Penjualan Barang PT Abadi</h1>
+        <hr><form method="dialog" action=" " name="Penjualanelektronik">
+            <br><br>
+             <label>Item Name &nbsp;<input type="text"name="itemname" id="itemname"></label>
+             <label> Price &nbsp;<input type="text"name="price" id="price" ></label>
+             <label>Total item &nbsp;<input type="text"name="totalitem"id="totalitem"></label>
+             &nbsp; &nbsp; &nbsp;
+             <button onclick="jumlah();">Enter</button>
+             <br><br>
+        <hr>
+            <br><br>
+             <label>Total Price &nbsp; &nbsp;  </label>
+             <input type="text" name="totalprice" id="totalprice">
+             <br><br>
+             <label>Discount &nbsp; &nbsp; &nbsp;</label>
+             <input type="text" id="discount"name="discount">
+             <br><br>
+             <label>Pay &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp; &nbsp;</label>
+             <input type="text" id="pay" name="pay">
+             &nbsp; &nbsp; &nbsp;
+             <input type="reset" value="Remove">
+        </form>
+    </body>
+</html>

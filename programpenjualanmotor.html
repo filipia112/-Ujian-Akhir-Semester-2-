@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Program Menghitung Gaji PT Abadi Komputer</title>
+        <link rel="stylesheet" href="penjualanmotor.css">
+        <script language="javascript" type="text/javascript">
+        function hasiltotal(){
+            var pricemerk;
+            var priceaAK;
+            var totalprice=document.formsalesmotor.totalprice.value;
+            var totaldengandiskonbunga=document.formsalesmotor.pay.value;
+            var tambahan;
+            var totaltambahan=document.formsalesmotor.bd.value;
+            if(optionmerk =="Suzuki"){
+                pricemerk=15000000;
+            }else if(optionmerk=="Honda"){
+                pricemerk=14000000;
+            }else if(optionmerk=="Yamaha"){
+                pricemerk=13000000;
+            }
+            if (document.formsalesmotor.velgracing.checked== true){
+                priceAK= 450000;
+            }if(document.formsalesmotor.helm.checked==true){
+                priceAK =250000;
+            }if(document.formsalesmotor.jaket.checked==true){
+                priceAK =300000;
+            } 
+            totalprice=priceaAK+pricemerk;
+            
+            if(document.formsalesmotor.kredit.checked==true){
+               tambahan=0.15;
+            }
+            if(document.formsalesmotor.debit.chekced==true){
+                tambahan=0.10; 
+            }
+            totaldengandiskonbunga=totalprice-(totalprice*tambahan);
+            totaltambahan=totalprice*tambahan;
+            document.formsalesmotor.totalprice.value=eval(totalprice);
+            document.formsalesmotor.pay.value=eval(totaldengandiskonbunga);
+            diskonbunga.formsalesmotor.bd.value=eval(totaltambahan);
+           
+         }    
+        
+        </script>
+    </head>
+    <body>
+        <h1>Program Penjualan Motor  &nbsp; </h1>
+        <br><br>
+        <form method="dialog" action=" " name="formsalesmotor"onchange="hasiltotal()">
+        <label>Merk Motor &nbsp; &nbsp;  &nbsp;  &nbsp;  
+            <select name="optionmerk" id="optionmerk">
+                <option value="">-Option item-</option>
+                <option value="Suzuki">Suzuki</option>
+                <option value="Honda">Honda</option>
+                <option value="Yamaha">Yamaha</option>
+            </select></label>
+        <br><br>
+        <label>Aksesoris &nbsp;&nbsp; &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  </label> 
+        <td>
+        <input type="checkbox" name="" id="velgracing"> Velg Racing &nbsp; &nbsp;</td>
+        <input type="checkbox" name="helm" id="helm"> Helm &nbsp; &nbsp;</td>
+        <input type="checkbox" name="jaket" id="jaket"> jaket&nbsp; &nbsp;</td>
+        <br><br>
+        <label>Metode Payment &nbsp;   </label>
+        <td>
+            <input type="checkbox" name="debit" id="debit">Debit</td>
+            <input type="checkbox" name="kredit" id="kredit">Kredit</td>
+        <br><br>
+        <label>Total Price  &nbsp;  &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  <input type="text" name="totalprice" id="totalprice"></label>
+        <br><br>
+        <label>Bunga/Diskon  &nbsp;  &nbsp;  &nbsp;   <input type="text" name="bd" id="bd"></label>
+        <br><br>
+        <label>Pay &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; <input type="text" name="pay" id="pay"></label>
+        <br><br>
+        <button onclick="hasiltotal()">Submit</button>
+        <input type="reset" value="Remove">
+    </form>
+    </body>
+</html>

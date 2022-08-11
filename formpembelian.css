@@ -1,0 +1,18 @@
+*
+body{
+    background-color: rgb(54, 10, 148);
+    align-items: center;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+    font-family: Ubuntu;
+    color: aliceblue;
+}
+label{
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(244, 250, 250);
+    
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Program Form Purchase Electronic Store</title>
+        <link rel="stylesheet" href="formpembelian.css">
+        <script language="javascript" type="text/javascript"> 
+        function hasiltotal(){
+            var totalitem=document.getElementById("totalitem").value;
+            var price=document.getElementById("price").value;
+            var total;
+            totalprice=totalitem*price;
+            document.getElementById("totalprice").value=totalprice; 
+        }
+        </script>
+    </head>
+    <body>
+        <h1>Form Purchase Electronic Store &nbsp; &nbsp; </h1>
+        <form method="dialog" action=" " name="formpembeliannescafestore">
+        <label>Item Name &nbsp; 
+        <select name="Option Item">
+            <option value="">-Option item-</option>
+            <option value="RAM Storage">RAM Storage</option>
+            <option value="Monitor">Monitor</option>
+            <option value="SSD Storage">SSD Storage</option>
+            <option value="GPU">GPU</option>
+            <option value="CPU Processor"> CPU Processor</option>
+            <option value="Keyboard">Keyboard</option>
+            <option value="Mouse">Mouse</option>
+        </select></label>
+        <br><br>
+        <label>Total item &nbsp; &nbsp;  <input type=text name="totalitem" id="totalitem"></label>
+        <br><br>
+        <label>Price &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type=text name="price" id="price"></label>
+        <br><br>
+        <label> Total Price &nbsp; &nbsp;<input type=text name="totalprice" id="totalprice"></label>
+        <button onclick="hasiltotal()">Enter</button>
+        <input type="reset" value="Remove">
+    </form>
+    </body>
+</html>

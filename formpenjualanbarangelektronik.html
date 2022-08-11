@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+        <title>Program Form Penjualan Barang Elektronik</title>
+        <link rel="stylesheet" href="formpenjualanbarangelektronik.css">
+        <script language="javascript" type="text/javascript"> 
+        function hasiltotal(){
+            var totalitem=document.formsaleelectronic.totlitem.value;
+            var price=parseFloat(document.getElementById("price").value);
+            var totalprice=document.formsaleelectronic.totalp.value;
+            var pay=document.formsaleelectronic.pay.value;
+            var totalpajak;
+            var priceAK;
+            
+            if (document.formsaleelectronic.mouse.checked== true){
+                priceAK= 50000;
+            }if(document.formsaleelectronic.Speaker.checked==true){
+                priceAK =80000;
+            }if(document.formsaleelectronic.USB.checked==true){
+                priceAK =50000;
+            }if(document.formsaleelectronic.memory.checked==true){
+                priceAK=120000;
+            }  
+            totalprice=priceAK*totalitem+price;
+            pay=totalprice+(totalprice*0.10);
+            totalpajak=totalprice*0.10;
+            document.formsaleelectronic.pay.value=eval(pay);
+			document.formsaleelectronic.totalpajak.value=eval(totalpajak);
+			document.formsaleelectronic.totalp.value=eval(totalprice);
+            
+    }   
+        </script>
+    </head>
+    <body>
+        <h1>Program Penjualan Barang Elektronik &nbsp; &nbsp; </h1>
+        <form method="dialog"name="formsaleelectronic" action=""onchange="hasiltotal()">
+            <br><br>
+            <label>Item Name &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; <input type="text"name="item" id="item"></label>
+            <br><br>
+            <label>Price &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; <input type="text"name="price"id="price"></label> 
+            <br><br>
+            <label>Accessories &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;  </label>
+            <td>
+                <input type="checkbox" name="" id="mouse">Mouse&nbsp; &nbsp;</td>
+                <input type="checkbox" name="Speaker" id="Speaker">Speaker&nbsp; &nbsp;</td>
+                <input type="checkbox" name="memory" id="memory">Memory&nbsp; &nbsp;</td>
+                <input type="checkbox" name="USB" id="USB">USB&nbsp; &nbsp;</td> 
+            <br><br>
+            <label>Total Accessories &nbsp; &nbsp; <input type="text"name="totlitem"id="totlitem"></label>
+            <br><br>
+            <label>Total Price &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; <input type="text" name="totalp" id="totalp"></label>
+            <br><br>
+            <label>Pajak 10% &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;  <input type="text" name="totalPajak" id="totalpajak"></label>
+            <br><br>
+            <label>Pay &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<input type="text" name="pay" id="pay"></label>
+            <button onclick="hasiltotal()">Submit</button>
+            <input type="reset" value="Remove">
+        </form>
+    </body>
+</html>
